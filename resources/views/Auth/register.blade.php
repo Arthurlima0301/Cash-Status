@@ -19,7 +19,7 @@
         </section>
 
         <section class="flex w-[40%]">
-            <form action="" method="" class="flex flex-col items-center gap-12 h-full w-full">
+            <form action="" method="" class="flex flex-col items-center gap-6 h-full w-full">
                 <div class="sticky w-full p-6">
                     <a href="/">
                         <img src="{{ asset('img/buttons/btn-return.svg') }}" class="cursor-pointer">
