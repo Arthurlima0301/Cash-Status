@@ -26,7 +26,7 @@
         {{-- OPTIONS --}}
         <nav class="flex items-center gap-3">
             <a href="" class="font-dosis text-secondary text-md p-3 rounded-md border-2 hover:bg-tertiary hover:text-primary">Sobre</a>
-            <a href="" class="font-dosis text-secondary text-md p-3 rounded-md border-2 hover:bg-tertiary hover:text-primary">Login</a>
+            <a href="/login" class="font-dosis text-secondary text-md p-3 rounded-md border-2 hover:bg-tertiary hover:text-primary">Login</a>
         </nav>
     </header>
     <main>
@@ -44,7 +44,7 @@
             {{-- REDIRECT REGISTER PAGE --}}
             <section class="flex flex-1 flex-col justify-center items-center gap-6">
                 <p class="font-dosis font-bold text-secondary md:text-[20px] ">Comece a gerenciar seu dinheiro</p>
-                <a href=""
+                <a href="/register"
                     class="font-dosis text-secondary text-md rounded-md border-2 border-secondary p-3 w-[150px] text-center 
                     hover:bg-secondary hover:text-primary">Cadastrar-se</a>
             </section>
