@@ -18,7 +18,7 @@
         </section>
 
         <section class="flex flex-col w-[40%]">
-            <div class="w-full p-3">
+            <div class="fixed w-full p-3">
                 <a href="/">
                     <img src="{{ asset('img/buttons/btn-return.svg') }}" class="cursor-pointer">
                 </a>
@@ -33,7 +33,7 @@
                     <img src="{{ asset('img/logo.svg') }}" class="h-15 w-15">
                     <span class="font-dosis text-primary md:text-[40px]">Cash Status</span>
 
-                    <div>
+                    <div class="h-10">
                         <h1 class="font-dosis text-[30px]">Criar Conta</h1>
                         @if ($errors->isNotEmpty())
                             <p class="text-center text-red-500">{{ $errors->first() }}</p>
@@ -41,31 +41,34 @@
                     </div>
                 </section>
 
-                <div class="flex flex-col">
+                <div class="flex flex-col gap-3">
+
                     <label for="" class="text-xl">Nome</label>
-                    <input type="text" name="name" class="h-10 w-92 p-3 text-lg bg-tertiary rounded-xl shadow-sm">
-                </div>
+                    <input type="text" name="name"
+                        class="h-10 w-92 p-3 text-lg border-2 border-tertiary rounded-xl" placeholder="Name">
 
-                <div class="flex flex-col">
                     <label for="" class="text-xl">Email</label>
-                    <input type="text" name="email" class="h-10 w-92 p-3 text-lg bg-tertiary rounded-xl shadow-sm">
-                </div>
+                    <input type="text" name="email"
+                        class="h-10 w-92 p-3 text-lg border-2 border-tertiary rounded-xl" placeholder="Email">
 
-                <div class="flex flex-col">
                     <label for="" class="text-xl">Senha</label>
                     <input type="password" name="password"
-                        class="h-10 w-92 p-3 text-lg bg-tertiary rounded-xl shadow-sm">
+                        class="h-10 w-92 p-3 text-lg border-2 border-tertiary rounded-xl" placeholder="Password">
                 </div>
 
-                <a href="/login" class="text-md text-blue-500">Já tem uma conta?</a>
 
                 <div class="flex gap-2 text-md">
                     <input type="checkbox" class="cursor-pointer">
                     <p>Mostrar Senha</p>
+
                 </div>
 
+
                 <button
-                    class="p-3 font-dosis text-secondary bg-primary rounded-md shadow-sm cursor-pointer">Registrar-Se</button>
+                    class="w-92 p-3 font-dosis text-secondary bg-primary rounded-md shadow-sm cursor-pointer">Registrar-Se</button>
+
+                <p class="text-gray-500">Já tem uma conta?<a href="/login" class="text-md text-blue-500 underline"> Login</a></p>
+
             </form>
         </section>
     </main>
