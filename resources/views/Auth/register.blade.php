@@ -35,7 +35,9 @@
 
                     <div>
                         <h1 class="font-dosis text-[30px]">Criar Conta</h1>
-                     
+                        @if ($errors->isNotEmpty())
+                            <p class="text-center text-red-500">{{ $errors->first() }}</p>
+                        @endif
                     </div>
                 </section>
 
