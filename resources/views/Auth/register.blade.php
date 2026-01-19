@@ -19,7 +19,7 @@
         </section>
 
         <section class="flex w-[40%]">
-            <form action="" method="" class="flex flex-col items-center gap-6 h-full w-full">
+            <form action="" method="" class="flex flex-col items-center gap-4 h-full w-full">
                 <div class="sticky w-full p-6">
                     <a href="/">
                         <img src="{{ asset('img/buttons/btn-return.svg') }}" class="cursor-pointer">
@@ -35,17 +35,17 @@
 
 
                 <div class="flex flex-col">
+                    <label for="" class="text-xl">Nome</label>
+                    <input type="text" class="h-10 w-92 p-3 text-lg bg-tertiary rounded-xl shadow-sm">
+                </div>
+
+                <div class="flex flex-col">
                     <label for="" class="text-xl">Email</label>
                     <input type="text" class="h-10 w-92 p-3 text-lg bg-tertiary rounded-xl shadow-sm">
                 </div>
 
                 <div class="flex flex-col">
                     <label for="" class="text-xl">Senha</label>
-                    <input type="password" class="h-10 w-92 p-3 text-lg bg-tertiary rounded-xl shadow-sm">
-                </div>
-
-                <div class="flex flex-col">
-                    <label for="" class="text-xl">Confirmar Senha</label>
                     <input type="password" class="h-10 w-92 p-3 text-lg bg-tertiary rounded-xl shadow-sm">
                 </div>
 
