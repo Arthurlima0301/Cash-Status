@@ -28,13 +28,14 @@ class UserController extends Controller
             [
                 'name' => 'required',
                 'email' => 'required|email|unique:users,email',
-                'password' => 'required',
+                'password' => 'required|min:8',
             ],
             [
                 'name.required' => 'Digite um nome',
                 'email.required' => 'Insira um email',
                 'email.unique' => 'Email já cadastrado',
                 'password.required' => 'Insira uma senha',
+                'password.min' => 'A senha deve possuir no mínimo 8 caracteres',
             ]
         );
 

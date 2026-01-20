@@ -33,8 +33,8 @@
                     <img src="{{ asset('img/logo.svg') }}" class="h-15 w-15">
                     <span class="font-dosis text-primary md:text-[40px]">Cash Status</span>
 
-                    <div class="h-10">
-                        <h1 class="font-dosis text-[30px]">Criar Conta</h1>
+                    <div class="h-15">
+                        <h1 class="font-dosis text-[30px] text-center">Criar Conta</h1>
                         @if ($errors->isNotEmpty())
                             <p class="text-center text-red-500">{{ $errors->first() }}</p>
                         @endif
@@ -48,7 +48,7 @@
                         class="h-10 w-92 p-3 text-lg border-2 border-tertiary rounded-xl" placeholder="Name">
 
                     <label for="" class="text-xl">Email</label>
-                    <input type="text" name="email"
+                    <input type="email" name="email"
                         class="h-10 w-92 p-3 text-lg border-2 border-tertiary rounded-xl" placeholder="Email">
 
                     <label for="" class="text-xl">Senha</label>
