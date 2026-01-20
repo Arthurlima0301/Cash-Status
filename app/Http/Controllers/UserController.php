@@ -23,7 +23,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
         // Validação
         $request->validate(
             [
@@ -46,7 +45,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('show-form-login');
+        return redirect()->route('form-login');
     }
 
     /**
