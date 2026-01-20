@@ -35,6 +35,9 @@
                     <img src="{{ asset('img/logo.svg') }}" class="h-15 w-15">
                     <span class="font-dosis text-primary md:text-[40px]">Cash Status</span>
                     <h1 class="font-dosis text-[30px]">Login</h1>
+                    @if ($errors->isNotEmpty())
+                        <p class="text-center text-red-500">{{ $errors->first() }}</p>
+                    @endif
                 </section>
 
 

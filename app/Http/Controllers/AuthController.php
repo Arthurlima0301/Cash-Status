@@ -21,6 +21,17 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
+        // Validação
+        $request->validate(
+            [
+                'email' => 'required',
+                'password' => 'required',
+            ],
+            [
+                'email.required' => 'Insira um email',
+                'password.required' => 'Insira uma senha',
+            ]
+        );
         //
         $crendentials = $request->only('email', 'password');
 
@@ -31,7 +42,7 @@ class AuthController extends Controller
             return redirect('/home');
         }
 
-
+        return redirect()->back()->withErrors('Crendiciais Inválidas');
     }
     /**
      * Remove the specified resource from storage.
