@@ -43,7 +43,7 @@
 
                 <div class="flex flex-col">
                     <label for="" class="text-xl">Email</label>
-                    <input type="text"
+                    <input type="email"
                         name="email" class="h-10 w-92 p-3 text-lg border-2 border-tertiary rounded-xl"
                         placeholder="Email ">
                 </div>
