@@ -12,7 +12,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="flex flex-col h-screen">
+<body class="flex flex-col h-screen" x-data="{open: false }">
     @include('Partials.header')
 
     <main class="flex flex-1">

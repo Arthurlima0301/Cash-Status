@@ -1,5 +1,5 @@
 <header class="flex items-center justify-between p-4 z-10 bg-primary">
-    <button class="cursor-pointer">
+    <button class="cursor-pointer" @click=" open =! open">
         <img src="{{ asset('img/buttons/btn-menu.svg') }}">
     </button>
 

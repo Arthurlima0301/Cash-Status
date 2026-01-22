@@ -1,4 +1,4 @@
-<div class="h-full w-full bg-black/60 backdrop-blur-sm">
+<div class="h-full w-full bg-black/60 backdrop-blur-sm" x-show="open" x-transition.opacity>
     <aside class="h-full w-[30%] bg-secondary">
 
         <nav class="flex flex-col h-full w-full font-dosis text-xl">
