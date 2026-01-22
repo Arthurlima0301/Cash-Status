@@ -3,7 +3,7 @@
 @section('title', 'Perfil')
 
 @section('content')
-    <section class="flex items-center justify-center h-full w-full py-22" ">
+    <section class="flex items-center justify-center h-full w-full py-22" x-data="{ img: '/img/buttons/btn-logout.svg' }">
 
         {{-- Card --}}
         <div class="flex flex-col h-full min-w-[30%] p-6 font-dosis bg-secondary rounded-xl shadow-md">
@@ -15,7 +15,6 @@
 
             {{-- Formulário de Logout --}}
             <form action="" method="" class="flex flex-col justify-center items-center gap-3 h-full ">
-
                 {{-- Avatar --}}
                 <img src="{{ asset('img/icons/icon-dark-default-avatar.svg') }}" class="h-52 w-52">
 
@@ -33,8 +32,11 @@
                         rounded-md 
                         cursor-pointer 
                         hover:bg-primary hover:text-secondary"
-                >
-                    <img src="{{ asset('img/buttons/btn-logout.svg') }}" class="h-6" />
+                    @mouseenter=" img = '/img/buttons/btn-white-logout.svg'"
+                    @mouseleave=" img = '/img/buttons/btn-logout.svg' ">
+
+                    <img :src="img" class="h-6">
+
                     Sair
                 </button>
             </form>
