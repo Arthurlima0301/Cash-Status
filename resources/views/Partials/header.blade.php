@@ -3,8 +3,10 @@
         <img src="{{ asset('img/buttons/btn-menu.svg') }}">
     </button>
 
-    <div class="flex items-center gap-2 font-dosis text-white">
-        <span>{{Auth::user()->name}}</span>
-        <img src="{{ asset('img/icons/icon-default-avatar.svg') }}" alt="">
+    <div>
+        <a href="{{route('profile')}}" class="flex items-center gap-2 font-dosis text-white">
+            <span>{{ Auth::user()->name }}</span>
+            <img src="{{ asset('img/icons/icon-default-avatar.svg') }}" alt="">
+        </a>
     </div>
 </header>
