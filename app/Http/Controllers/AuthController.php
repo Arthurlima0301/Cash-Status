@@ -39,7 +39,7 @@ class AuthController extends Controller
         if (Auth::attempt($crendentials)) {
             $request->session()->regenerate();
 
-            return redirect('/home');
+            return redirect('/dashboard');
         }
 
         return redirect()->back()->withErrors('Crendiciais Inválidas');

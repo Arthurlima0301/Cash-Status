@@ -4,7 +4,7 @@
         <nav class="flex flex-col h-full w-full font-dosis text-xl">
             <ul>
                 <li>
-                    <a href="#" class="flex items-center h-full w-full p-6 hover:bg-tertiary">
+                    <a href="{{route('dashboard')}}" class="flex items-center h-full w-full p-6 hover:bg-tertiary">
                         <img src="{{ asset('img/buttons/btn-dashboard.svg') }}" class="h-10 w-10">
                         <span class="m-auto">Dashboard</span>
                     </a>
