@@ -4,7 +4,7 @@
     </button>
 
     <div class="flex items-center gap-2 font-dosis text-white">
-        <span>Usuário 1</span>
+        <span>{{Auth::user()->name}}</span>
         <img src="{{ asset('img/icons/icon-default-avatar.svg') }}" alt="">
     </div>
 </header>
