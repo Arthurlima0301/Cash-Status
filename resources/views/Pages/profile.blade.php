@@ -14,7 +14,10 @@
 
 
             {{-- Formulário de Logout --}}
-            <form action="" method="" class="flex flex-col justify-center items-center gap-3 h-full ">
+            <form action="{{ route('logout') }}" method="POST"
+                class="flex flex-col justify-center items-center gap-3 h-full ">
+                @csrf
+
                 {{-- Avatar --}}
                 <img src="{{ asset('img/icons/icon-dark-default-avatar.svg') }}" class="h-52 w-52">
 
@@ -36,7 +39,6 @@
                     @mouseleave=" img = '/img/buttons/btn-logout.svg' ">
 
                     <img :src="img" class="h-6">
-
                     Sair
                 </button>
             </form>

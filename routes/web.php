@@ -20,5 +20,7 @@ Route::get('/Profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/login', [AuthController::class, 'showFormLogin'])->name('form-login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 Route::get('/register', [UserController::class, 'create'])->name('form-register');
 Route::post('/register', [UserController::class, 'store'])->name('register');
