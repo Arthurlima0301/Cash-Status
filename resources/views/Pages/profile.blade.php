@@ -8,7 +8,7 @@
         {{-- Card --}}
         <div class="flex flex-col h-full min-w-[30%] p-6 font-dosis bg-secondary rounded-xl shadow-md">
             {{-- Botão de Retorno --}}
-            <a  class="fixed cursor-pointer">
+            <a class="fixed cursor-pointer">
                 <img src="{{ asset('img/buttons/btn-return.svg') }}">
             </a>
 
@@ -20,8 +20,8 @@
 
                 {{-- Informações de Usuários --}}
                 <div class="text-center text-[25px]">
-                    <p>Usuário</p>
-                    <p class="text-[#8C8C8C]">email@gmail.com</p>
+                    <p>{{ Auth::user()->name }}</p>
+                    <p class="text-[#8C8C8C]">{{ Auth::user()->email }}</p>
                 </div>
 
                 {{-- Botão de Logout --}}
