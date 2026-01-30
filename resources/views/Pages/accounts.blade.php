@@ -31,7 +31,7 @@
                 <span class="font-bold text-[20px]">Criar</span>
                 <button class="cursor-pointer">
                     <img src="{{ asset('img/buttons/btn-create.svg') }}" class=""
-                        >
+                        @click=" $refs.createModal.showModal() ">
                 </button>
             </div>
         </div>
