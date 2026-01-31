@@ -42,17 +42,17 @@
                     <th class="py-4">Conta</th>
                     <th>Nome</th>
                     <th>Saldo</th>
-                    <th>Ações
-                    <th>
+                    <th colspan="2">Ações<th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="text-xl">
-                    <td class="py-4"><img src="{{ asset('img/buttons/btn-account.svg') }}"
+                    <td class="py-4"><img src=""
                             class="h-20 w-20 m-auto border-1 rounded-full"></td>
                     <td><a href="" class="hover:text-gray-500">Teste</a></td>
                     <td>Teste</td>
-                    <td><img src="{{ asset('img/buttons/btn-edit-pencil.svg') }}" class="m-auto cursor-pointer"></td>
+                    <td><img src="{{ asset('img/buttons/btn-edit-pencil.svg') }}" class="h-8 m-auto cursor-pointer"></td>
+                    <td><img src="{{ asset('img/buttons/btn-bin.svg') }}" class="h-8  m-auto cursor-pointer"></td>
                 </tr>
             </tbody>
         </table>
