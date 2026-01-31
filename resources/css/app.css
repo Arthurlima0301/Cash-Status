@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'Dosis';
-    src: url('/font/Dosis/Dosis-Regular.woff2') format('woff2');
+    src: url('/public/font/Dosis/Dosis-Regular.woff2') format('woff2');
 }
 
 @theme {
