@@ -18,4 +18,21 @@ class AccountController extends Controller
     }
 
 
+    /*
+        CRIAR UMA CONTA
+    */
+    public function store(Request $request){
+        $userId = Auth::user()->id;
+
+        Account::create([
+            'name' => $request->name,
+            'avatar' => '', // Temporário
+            'balance' => 00.00,
+            'id_user' => $userId
+        ]);
+
+
+        return redirect()->back();
+    }
+
 }

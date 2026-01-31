@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
     Route::get('/accounts', [AccountController::class,'index'])->name('accounts');
+    Route::post('/accounts', [AccountController::class,'store'])->name('account-store');
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
