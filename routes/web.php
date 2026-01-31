@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 
 // 
@@ -17,6 +18,8 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+    Route::get('/accounts', [AccountController::class,'index'])->name('accounts');
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

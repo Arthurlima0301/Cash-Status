@@ -18,7 +18,7 @@
                 </li>
 
                 <li>
-                    <a href="" class="flex items-center w-full p-6 hover:bg-tertiary">
+                    <a href="{{route('accounts')}}" class="flex items-center w-full p-6 hover:bg-tertiary">
                         <img src="{{ asset('img/buttons/btn-account.svg') }}" class="h-10 w-10">
                         <span class="m-auto">Contas</span>
                     </a>
