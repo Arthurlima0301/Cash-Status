@@ -11,15 +11,16 @@
     <form action="min-w-[450px]" class="flex flex-col items-center gap-6"
         x-data= "{ preview: '/img/buttons/btn-account.svg' }">
 
+        {{--
+                Mexer Futuramente na Criação de Imagens da Conta
         <div class="flex flex-col">
             <label for="account-avatar" class="flex justify-end">
                 <img src="{{ asset('/img/buttons/btn-edit-pencil.svg') }}" class="fixed h-8 w-8 cursor-pointer">
-                <input id="account-avatar" name="account-avatar" type="file" class="hidden"
-                    @change="preview = URL.createObjectURL($event.target.files[0]) ">
+                <input id="account-avatar" name="account-avatar" type="file" class="hidden">
             </label>
-
             <img :src="preview" class="flex h-62 w-62 border-2 border-primary rounded-full">
         </div>
+        --}}
 
         <div class="flex flex-col text-center">
             <label class="font-bold text-[30px]">Nome</label>
