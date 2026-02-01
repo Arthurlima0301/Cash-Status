@@ -11,7 +11,7 @@
     @endif
 
 
-    <section class="flex flex-col flex-1 gap-3 px-62 py-12  font-dosis"   x-data="{accountName: '', accountId: null}">
+    <section class="flex flex-col flex-1 gap-3 px-62 py-12  font-dosis" x-data="{ accountName: '', accountId: null }">
 
         {{-- Card --}}
         <div class="grid grid-cols-4 p-3 bg-secondary text-center rounded-xl shadow-md">
@@ -64,16 +64,23 @@
                                 <td>{{ $account->balance }}</td>
                                 <td><img src="{{ asset('img/buttons/btn-edit-pencil.svg') }}"
                                         class="h-6 m-auto cursor-pointer"
-                                        @click=" accountName = '{{$account->name}}'; accountId = '{{$account->id}}'; $refs.editModal.showModal() ">
+                                        @click=" accountName = '{{ $account->name }}'; accountId = '{{ $account->id }}'; $refs.editModal.showModal() ">
                                 </td>
-                                <td><img src="{{ asset('img/buttons/btn-bin.svg') }}" class="h-6  m-auto cursor-pointer">
+                                <td>
+                                    <form action="{{route('account-delete', $account->id )}}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit">
+                                            <img src="{{ asset('img/buttons/btn-bin.svg') }}" class="h-6  m-auto cursor-pointer">
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
                     @else
-                    <tr>
-                        <td colspan="4" class="p-6 text-xl"> Nenhuma conta foi criada</td>
-                    </tr>
+                        <tr>
+                            <td colspan="4" class="p-6 text-xl"> Nenhuma conta foi criada</td>
+                        </tr>
                     @endif
                 </tbody>
             </table>

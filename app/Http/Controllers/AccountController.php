@@ -68,4 +68,12 @@ class AccountController extends Controller
 
         return redirect()->back()->withSucess('Conta editada com sucesso');
     }
+
+
+    public function destroy($id)
+    {
+        Account::findOrFail($id)->delete();
+
+        return redirect()->back();
+    }
 }
