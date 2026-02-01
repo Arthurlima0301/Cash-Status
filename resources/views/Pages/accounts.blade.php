@@ -21,7 +21,7 @@
                 <span class="flex items-center gap-2 text-[25px] font-bold"><img
                         src="{{ asset('img/icons/icon-balance.svg') }}">Saldo
                     Total</span>
-                <span class="text-green-500 text-[30px]">R$2000</span>
+                <span class="text-green-500 text-[30px]">R${{ $total_balance }}</span>
             </div>
 
             <div class="flex flex-col items-center justify-center gap-2">
@@ -44,26 +44,39 @@
             </div>
         </div>
 
-        <table class="text-center bg-secondary rounded-xl shadow-md">
-            <thead>
-                <tr class="text-[25px]">
-                    <th class="py-4">Conta</th>
-                    <th>Nome</th>
-                    <th>Saldo</th>
-                    <th colspan="2">Ações
-                    <th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="text-xl">
-                    <td class="py-4"><img src="" class="h-20 w-20 m-auto border-1 rounded-full"></td>
-                    <td><a href="" class="hover:text-gray-500">Teste</a></td>
-                    <td>Teste</td>
-                    <td><img src="{{ asset('img/buttons/btn-edit-pencil.svg') }}" class="h-8 m-auto cursor-pointer"></td>
-                    <td><img src="{{ asset('img/buttons/btn-bin.svg') }}" class="h-8  m-auto cursor-pointer"></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="max-h-[calc(100vh-350px)] overflow-y-auto rounded-xl shadow-md scrollbar-custom">
+            <table class="w-full text-center bg-secondary rounded-xl">
+                <thead class="sticky inset-0 bg-white">
+                    <tr class="text-[25px]">
+                        <th class="py-4">Conta</th>
+                        <th>Nome</th>
+                        <th>Saldo</th>
+                        <th colspan="2">Ações
+                        <th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if ($accounts->isNotEmpty())
+                        @foreach ($accounts as $account)
+                            <tr class="text-xl">
+                                <td class="py-4"><img class="h-20 w-20 m-auto border-1 rounded-full"></td>
+                                <td><a href="" class="hover:text-gray-500">{{ $account->name }}</a></td>
+                                <td>{{ $account->balance }}</td>
+                                <td><img src="{{ asset('img/buttons/btn-edit-pencil.svg') }}"
+                                        class="h-6 m-auto cursor-pointer">
+                                </td>
+                                <td><img src="{{ asset('img/buttons/btn-bin.svg') }}" class="h-6  m-auto cursor-pointer">
+                                </td>
+                            </tr>
+                        @endforeach
+                    @else
+                        <tr>
+                            <td colspan="4" class="p-6 text-xl"> Nenhuma conta foi criada</td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table>
+        </div>
     </section>
     @include('Modals.create-account-pop-up')
 @endsection

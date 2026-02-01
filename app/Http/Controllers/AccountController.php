@@ -14,7 +14,11 @@ class AccountController extends Controller
     */
     public function index()
     {
-        return view('Pages.accounts');
+        $accounts = Account::where('id_user', Auth::user()->id)->get();
+
+        $total_balance = $accounts->sum('balace');
+
+        return view('Pages.accounts', compact('accounts','total_balance'));
     }
 
 
