@@ -64,7 +64,7 @@
                                 <td>{{ $account->balance }}</td>
                                 <td><img src="{{ asset('img/buttons/btn-edit-pencil.svg') }}"
                                         class="h-6 m-auto cursor-pointer"
-                                        @click=" accountName = 'teste'; accountId = '{{$account->id}}'; $refs.editModal.showModal() ">
+                                        @click=" accountName = '{{$account->name}}'; accountId = '{{$account->id}}'; $refs.editModal.showModal() ">
                                 </td>
                                 <td><img src="{{ asset('img/buttons/btn-bin.svg') }}" class="h-6  m-auto cursor-pointer">
                                 </td>
