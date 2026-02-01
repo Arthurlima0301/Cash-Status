@@ -49,4 +49,13 @@ class AccountController extends Controller
 
         return redirect()->back()->withSucess('Conta criada com sucesso');
     }
+
+    public function update (Request $request){
+        $account = Account::findOrFail($request->id);
+
+        $account->name = $request->newName;
+        $account->save();
+
+        return redirect()->back();
+    }
 }

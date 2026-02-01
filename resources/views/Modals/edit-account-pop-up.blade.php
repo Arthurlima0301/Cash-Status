@@ -8,7 +8,7 @@
         </button>
     </div>
 
-    <form action="" method="" class="flex flex-col items-center gap-6">
+    <form action="{{route('account-update')}}" method="POST" class="flex flex-col items-center gap-6">
 
         @csrf        
 
@@ -27,7 +27,7 @@
 
         <div class="flex flex-col text-center">
             <label class="font-bold text-[30px]">Nome</label>
-            <input type="text" name="name" id="name" class="w-62 p-2 text-center text-[25px] border-2 border-tertiary rounded-md"
+            <input type="text" name="newName" id="newName" class="w-62 p-2 text-center text-[25px] border-2 border-tertiary rounded-md"
                 placeholder="Digite um nome" x-model="accountName">
         </div>
 
