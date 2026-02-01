@@ -21,7 +21,18 @@ class AccountController extends Controller
     /*
         CRIAR UMA CONTA
     */
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+
+        $request->validate(
+            [
+                'name' => 'required',
+            ],
+            [
+                'name.required' => 'Insira o nome da conta',
+            ]
+        );
+
         $userId = Auth::user()->id;
 
         Account::create([
@@ -32,7 +43,6 @@ class AccountController extends Controller
         ]);
 
 
-        return redirect()->back();
+        return redirect()->back()->withSucess('Conta criada com sucesso');
     }
-
 }

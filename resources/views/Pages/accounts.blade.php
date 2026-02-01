@@ -4,7 +4,15 @@
 @section('title', 'Contas')
 
 @section('content')
+    @if ($errors->isNotEmpty())
+        @include('Modals.error-modal')
+    @elseif (session()->has('sucess'))
+        @include('Modals.sucess-modal')
+    @endif
+
+
     <section class="flex flex-col flex-1 gap-3 px-62 py-12  font-dosis" x-data>
+
         {{-- Card --}}
         <div class="grid grid-cols-4 p-3 bg-secondary text-center rounded-xl shadow-md">
             <h2 class="col-start-2 col-span-2 font-bold text-[30px]">Todas as Contas</h2>
@@ -42,13 +50,13 @@
                     <th class="py-4">Conta</th>
                     <th>Nome</th>
                     <th>Saldo</th>
-                    <th colspan="2">Ações<th>
+                    <th colspan="2">Ações
+                    <th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="text-xl">
-                    <td class="py-4"><img src=""
-                            class="h-20 w-20 m-auto border-1 rounded-full"></td>
+                    <td class="py-4"><img src="" class="h-20 w-20 m-auto border-1 rounded-full"></td>
                     <td><a href="" class="hover:text-gray-500">Teste</a></td>
                     <td>Teste</td>
                     <td><img src="{{ asset('img/buttons/btn-edit-pencil.svg') }}" class="h-8 m-auto cursor-pointer"></td>
