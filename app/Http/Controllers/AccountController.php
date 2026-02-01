@@ -74,6 +74,6 @@ class AccountController extends Controller
     {
         Account::findOrFail($id)->delete();
 
-        return redirect()->back();
+       return redirect()->back()->withSucess('Conta excluída com sucesso');
     }
 }
