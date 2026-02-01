@@ -18,7 +18,7 @@ class AccountController extends Controller
 
         $total_balance = $accounts->sum('balace');
 
-        return view('Pages.accounts', compact('accounts','total_balance'));
+        return view('Pages.accounts', compact('accounts', 'total_balance'));
     }
 
 
@@ -50,12 +50,22 @@ class AccountController extends Controller
         return redirect()->back()->withSucess('Conta criada com sucesso');
     }
 
-    public function update (Request $request){
+    public function update(Request $request)
+    {
+
+        $request->validate(
+            [
+                'newName' => 'required',
+            ],
+            [
+                'newName.required' => 'Insira um novo nome a conta',
+            ]
+        );
         $account = Account::findOrFail($request->id);
 
         $account->name = $request->newName;
         $account->save();
 
-        return redirect()->back();
+        return redirect()->back()->withSucess('Conta editada com sucesso');
     }
 }
