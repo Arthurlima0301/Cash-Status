@@ -11,7 +11,7 @@
     @endif
 
 
-    <section class="flex flex-col flex-1 gap-3 px-62 py-12  font-dosis" x-data>
+    <section class="flex flex-col flex-1 gap-3 px-62 py-12  font-dosis"   x-data="{accountName: '', accountId: null}">
 
         {{-- Card --}}
         <div class="grid grid-cols-4 p-3 bg-secondary text-center rounded-xl shadow-md">
@@ -63,20 +63,22 @@
                                 <td><a href="" class="hover:text-gray-500">{{ $account->name }}</a></td>
                                 <td>{{ $account->balance }}</td>
                                 <td><img src="{{ asset('img/buttons/btn-edit-pencil.svg') }}"
-                                        class="h-6 m-auto cursor-pointer">
+                                        class="h-6 m-auto cursor-pointer"
+                                        @click=" accountName = 'teste'; accountId = '{{$account->id}}'; $refs.editModal.showModal() ">
                                 </td>
                                 <td><img src="{{ asset('img/buttons/btn-bin.svg') }}" class="h-6  m-auto cursor-pointer">
                                 </td>
                             </tr>
                         @endforeach
                     @else
-                        <tr>
-                            <td colspan="4" class="p-6 text-xl"> Nenhuma conta foi criada</td>
-                        </tr>
+                    <tr>
+                        <td colspan="4" class="p-6 text-xl"> Nenhuma conta foi criada</td>
+                    </tr>
                     @endif
                 </tbody>
             </table>
         </div>
+        @include('Modals.edit-account-pop-up')
     </section>
     @include('Modals.create-account-pop-up')
 @endsection
